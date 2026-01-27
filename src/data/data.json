@@ -1,0 +1,48 @@
+{
+  "pages": [
+    {
+      "name": "About",
+      "href": "/about"
+    },
+    {
+      "name": "Projects",
+      "href": "/projects"
+    },
+    {
+      "name": "Services",
+      "href": "/services"
+    },
+    {
+      "name": "Contact",
+      "href": "/contact"
+    }
+  ],
+  "collections": [
+    {
+      "name": "Bouquets",
+      "imageSrc": "#",
+      "category": "Collection",
+      "href": "#"
+    },
+    {
+      "name": "Centerpieces",
+      "imageSrc": "#",
+      "category": "Collection",
+      "href": "#"
+    },
+    {
+      "name": "Weddings",
+      "imageSrc": "#",
+      "category": "Collection",
+      "href": "#"
+    },
+    {
+      "name": "Events",
+      "imageSrc": "#",
+      "category": "Collection",
+      "href": "#"
+    },
+    { "name": "5", "imageSrc": "#", "category": "Collection", "href": "#" }
+  ],
+  "services": [{}]
+}
