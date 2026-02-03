@@ -5,21 +5,28 @@ import PageLinks from './PageLinks';
 
 export function Menu({ setIsOpen }: { setIsOpen: Dispatch<boolean> }) {
   return (
-    <div className='grid grid-cols-2 w-full fixed h-screen top-0 bg-bone-white'>
+    <div className="fixed top-0 grid h-screen w-full grid-cols-2 bg-bone-white">
       <button
-        className='absolute top-9 right-9'
+        className="absolute top-9 right-9"
         onClick={() => setIsOpen(false)}
       >
         x
       </button>
-      <div className='flex flex-col justify-between p-9'>
-        {PageLinks(setIsOpen)}
+      <div className="flex flex-col justify-between p-9">
+        <PageLinks
+          setIsOpen={setIsOpen}
+          classNames={{
+            list: 'mt-4 hidden md:block',
+            item: 'text-sm/[1.8rem]',
+          }}
+        />
         <Brand />
       </div>
+      {/* TODO: replace image */}
       <Image
-        src='/Firefly_Imagen_Full-bleed editorial photograph (sculptural floral composition) on a Matte stone (tra 658735 1.jpg'
-        alt='Floral arrangement by Kelly Green Designs'
-        className='w-full h-full object-cover bg-gray-200'
+        src="/Firefly_Imagen_Full-bleed editorial photograph (sculptural floral composition) on a Matte stone (tra 658735 1.jpg"
+        alt="Floral arrangement by Kelly Green Designs"
+        className="h-full w-full bg-gray-200 object-cover"
         width={3000}
         height={100}
       />

@@ -1,24 +1,61 @@
 import Link from 'next/link';
 import { Dispatch } from 'react';
-import data from '@/data/data.json';
 
-export default async function PageLinks(
-  setIsOpen: Dispatch<boolean>,
-  depth?: number
-) {
-  const link = (page: Record<string, string>) => {
-    return (
-      <li key={page.name} className="list-none text-sm/[1.8rem]">
-        {depth ? (
-          <a onClick={() => setIsOpen(true)}>{page.name}</a>
-        ) : (
-          <Link href={page.href} onClick={() => setIsOpen(false)}>
-            {page.name}
-          </Link>
-        )}
-      </li>
-    );
+const pages = [
+  {
+    name: 'About',
+    href: '/about',
+  },
+  {
+    name: 'Projects',
+    href: '/projects',
+  },
+  {
+    name: 'Services',
+    href: '/services',
+  },
+  {
+    name: 'Contact',
+    href: '/contact',
+  },
+];
+
+export default function PageLinks({
+  setIsOpen,
+  depth,
+  classNames,
+}: {
+  setIsOpen?: Dispatch<boolean>;
+  depth?: number;
+  classNames?: { list?: string; item?: string };
+}) {
+  const { item, list } = classNames || {};
+
+  const renderLink = (page: Record<string, string>) => {
+    // If menu with open/close behavior is needed
+    if (setIsOpen) {
+      // TODO: if the page has children, open the fly out menu
+      if (depth)
+        return <button onClick={() => setIsOpen(true)}>{page.name}</button>;
+
+      return (
+        <Link href={page.href} onClick={() => setIsOpen(false)}>
+          {page.name}
+        </Link>
+      );
+    }
+
+    // Basic listing of pages
+    return <Link href={page.href}>{page.name}</Link>;
   };
 
-  return <nav className="mt-4 hidden md:block">{data.pages.map(link)}</nav>;
+  return (
+    <nav className={list ?? ''}>
+      {pages.map((page, i) => (
+        <li key={i} className={`list-none ${item ?? ''}`}>
+          {renderLink(page)}
+        </li>
+      ))}
+    </nav>
+  );
 }
