@@ -3,15 +3,10 @@ import Brand from './Brand';
 import Image from 'next/image';
 import PageLinks from './PageLinks';
 
+// TODO: relayout and restyle for mobile
 export function Menu({ setIsOpen }: { setIsOpen: Dispatch<boolean> }) {
   return (
     <div className="fixed top-0 grid h-screen w-full grid-cols-2 bg-bone-white">
-      <button
-        className="absolute top-9 right-9"
-        onClick={() => setIsOpen(false)}
-      >
-        x
-      </button>
       <div className="flex flex-col justify-between p-9">
         <PageLinks
           setIsOpen={setIsOpen}

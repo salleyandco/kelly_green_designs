@@ -1,8 +1,9 @@
 import Link from 'next/link';
 
-export default function Brand() {
+export default function Brand({ className }: { className?: string }) {
+  // TODO: replace font
   return (
-    <Link href="/">
+    <Link href="/" className={className}>
       <svg
         width="303"
         height="78"

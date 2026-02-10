@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Button from './Button';
 import Brand from './Brand';
-import PageLinks from './PageLinks';
 import { Menu } from './Menu';
 
 export default function Header() {
@@ -11,52 +10,49 @@ export default function Header() {
 
   return (
     <header
-      className={'fixed top-0 z-50 flex w-full items-start justify-between'}
+      className={'fixed top-0 z-50 flex w-full items-center justify-between'}
     >
-      <button onClick={() => setIsOpen(true)} className="m-4 md:hidden">
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M21 17C21.5523 17 22 17.4477 22 18C22 18.5523 21.5523 19 21 19H3C2.44772 19 2 18.5523 2 18C2 17.4477 2.44772 17 3 17H21ZM21 11C21.5523 11 22 11.4477 22 12C22 12.5523 21.5523 13 21 13H3C2.44772 13 2 12.5523 2 12C2 11.4477 2.44772 11 3 11H21ZM21 5C21.5523 5 22 5.44772 22 6C22 6.55228 21.5523 7 21 7H3C2.44772 7 2 6.55228 2 6C2 5.44772 2.44772 5 3 5H21Z"
-            fill="black"
-          />
-          <mask
-            id="mask0_2002_1070"
-            style={{ maskType: 'luminance' }}
-            maskUnits="userSpaceOnUse"
-            x="2"
-            y="5"
-            width="20"
-            height="14"
-          >
-            <path
-              d="M21 17C21.5523 17 22 17.4477 22 18C22 18.5523 21.5523 19 21 19H3C2.44772 19 2 18.5523 2 18C2 17.4477 2.44772 17 3 17H21ZM21 11C21.5523 11 22 11.4477 22 12C22 12.5523 21.5523 13 21 13H3C2.44772 13 2 12.5523 2 12C2 11.4477 2.44772 11 3 11H21ZM21 5C21.5523 5 22 5.44772 22 6C22 6.55228 21.5523 7 21 7H3C2.44772 7 2 6.55228 2 6C2 5.44772 2.44772 5 3 5H21Z"
-              fill="white"
-            />
-          </mask>
-          <g mask="url(#mask0_2002_1070)">
-            <rect width="32" height="32" fill="white" />
-          </g>
-        </svg>
-      </button>
-      <div className="mx-9 my-6">
-        <Brand />
-        <PageLinks
-          setIsOpen={setIsOpen}
-          depth={1}
-          classNames={{ list: 'hidden md:block' }}
-        />
-      </div>
-      <div className="mr-9 flex items-center">
+      <span className="w-14 md:hidden" />
+      <Brand className="my-6 md:mx-9" />
+      {/* <span className="hidden grow md:block" />
+      <div className="mr-9 flex items-center self-start">
         <Button href="/contact" className="hidden md:block">
-          Contact
+          Concierge
         </Button>
-      </div>
+      </div> */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className={
+          'group relative z-50 mr-4 flex h-2 w-10 cursor-pointer flex-col justify-between opacity-100 transition-opacity duration-500 hover:opacity-40 md:m-9 md:h-[calc(0.13793vw+7.24138px)] md:w-[calc(0.68966vw+36.2069px)] xl:h-2.5 xl:w-12.5'
+        }
+      >
+        <span
+          className={
+            'absolute left-0 h-0.5 w-full origin-center -translate-y-1/2 bg-black' +
+            (isOpen
+              ? ' top-1/2 -translate-y-1/2 rotate-45 delay-300'
+              : ' top-px group-hover:-top-px')
+          }
+          style={{
+            transition: isOpen
+              ? 'transform 0.3s ease 0.3s, top 0.3s ease'
+              : 'transform 0.3s ease, top 0.3s ease',
+          }}
+        ></span>
+        <span
+          className={
+            'absolute left-0 h-0.5 w-full origin-center -translate-y-1/2 bg-black' +
+            (isOpen
+              ? ' top-1/2 -translate-y-1/2 -rotate-45 delay-300'
+              : ' top-[calc(100%-1px)] group-hover:top-[calc(100%+1px)]')
+          }
+          style={{
+            transition: isOpen
+              ? 'transform 0.3s ease 0.3s, top 0.3s ease'
+              : 'transform 0.3s ease, top 0.3s ease',
+          }}
+        ></span>
+      </button>
       {isOpen && <Menu setIsOpen={setIsOpen} />}
     </header>
   );

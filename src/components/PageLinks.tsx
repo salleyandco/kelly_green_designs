@@ -15,7 +15,7 @@ const pages = [
     href: '/services',
   },
   {
-    name: 'Contact',
+    name: 'Contact Us',
     href: '/contact',
   },
 ];
@@ -39,14 +39,18 @@ export default function PageLinks({
         return <button onClick={() => setIsOpen(true)}>{page.name}</button>;
 
       return (
-        <Link href={page.href} onClick={() => setIsOpen(false)}>
+        <Link href={page.href} onClick={() => setIsOpen(false)} scroll={false}>
           {page.name}
         </Link>
       );
     }
 
     // Basic listing of pages
-    return <Link href={page.href}>{page.name}</Link>;
+    return (
+      <Link href={page.href} scroll={false}>
+        {page.name}
+      </Link>
+    );
   };
 
   return (

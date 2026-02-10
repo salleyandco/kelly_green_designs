@@ -5,8 +5,8 @@ export default async function CategoryPage() {
   const projects = await getProjects();
 
   return (
-    <main>
-      <div className="mx-16 mt-53 grid grid-cols-4 gap-4">
+    <main className="mt-page">
+      <div className="mx-16 mt-53 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {projects.length > 0 ? (
           projects.map((project, i) => (
             <Tile key={i} metadata={{ ...project }}></Tile>

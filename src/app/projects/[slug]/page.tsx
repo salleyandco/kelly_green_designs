@@ -52,8 +52,7 @@ export default async function Single({
         fill
         className="relative! h-screen! object-cover"
       />
-      <Image src={'/#'} alt="image" height={200} width={300} className="m-8" />
-      <section className="m-8">
+      <header className="m-8">
         <div className="flex border-b border-graphite">
           <p>Project</p>
           <h1>{project.title}</h1>
@@ -66,6 +65,9 @@ export default async function Single({
           <p>Location</p>
           <p>{project.location}</p>
         </div>
+      </header>
+      <Image src={'/#'} alt="image" height={200} width={300} className="m-8" />
+      <section>
         <CustomMDX source={project.content} components={overrideComponents} />
       </section>
       <Image

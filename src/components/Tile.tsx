@@ -9,8 +9,10 @@ export default function Tile({
   metadata: Project;
   className?: string;
 }) {
+  const slug = '/projects/' + metadata.slug;
+
   return (
-    <Link href={metadata.slug ?? '#'} className={className}>
+    <Link href={slug ?? '#'} className={className}>
       <div key={metadata.title}>
         {metadata.featured_image ? (
           <Image
@@ -24,7 +26,7 @@ export default function Tile({
           <div className={`aspect-3/4 w-full bg-gray-200`}></div>
         )}
         {/* <p className="text-xs">{metadata.categories.join(', ')}</p> */}
-        <h4 className="text-2xl">{metadata.title}</h4>
+        <h4 className="text-md my-2">{metadata.title}</h4>
       </div>
     </Link>
   );
