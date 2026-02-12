@@ -7,6 +7,17 @@ import { Menu } from './Menu';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMenuMounted, setIsMenuMounted] = useState(false);
+
+  const handleMenuState = (nextState: boolean) => {
+    if (nextState) {
+      setIsMenuMounted(true);
+      setIsOpen(true);
+      return;
+    }
+
+    setIsOpen(false);
+  };
 
   return (
     <header
@@ -21,7 +32,7 @@ export default function Header() {
         </Button>
       </div> */}
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => handleMenuState(!isOpen)}
         className={
           'group relative z-50 mr-4 flex h-2 w-10 cursor-pointer flex-col justify-between opacity-100 transition-opacity duration-500 hover:opacity-40 md:m-9 md:h-[calc(0.13793vw+7.24138px)] md:w-[calc(0.68966vw+36.2069px)] xl:h-2.5 xl:w-12.5'
         }
@@ -53,7 +64,17 @@ export default function Header() {
           }}
         ></span>
       </button>
-      {isOpen && <Menu setIsOpen={setIsOpen} />}
+      {isMenuMounted && (
+        <Menu
+          isOpen={isOpen}
+          setIsOpen={handleMenuState}
+          onAnimationEnd={() => {
+            if (!isOpen) {
+              setIsMenuMounted(false);
+            }
+          }}
+        />
+      )}
     </header>
   );
 }

@@ -4,9 +4,22 @@ import Image from 'next/image';
 import PageLinks from './PageLinks';
 
 // TODO: relayout and restyle for mobile
-export function Menu({ setIsOpen }: { setIsOpen: Dispatch<boolean> }) {
+export function Menu({
+  isOpen,
+  setIsOpen,
+  onAnimationEnd,
+}: {
+  isOpen: boolean;
+  setIsOpen: Dispatch<boolean>;
+  onAnimationEnd?: () => void;
+}) {
   return (
-    <div className="fixed top-0 grid h-screen w-full grid-cols-2 bg-bone-white">
+    <div
+      className={`fixed top-0 grid h-screen w-full grid-cols-2 bg-bone-white ${
+        isOpen ? 'animate-menu-slide-in' : 'animate-menu-slide-out'
+      }`}
+      onAnimationEnd={onAnimationEnd}
+    >
       <div className="flex flex-col justify-between p-9">
         <PageLinks
           setIsOpen={setIsOpen}

@@ -6,7 +6,13 @@ export default function ContactPage() {
   return (
     <main className="mt-page grid grid-cols-1 lg:grid-cols-2">
       <div className="bg-[#AA9361]/15 p-9">
-        <h1 className="mb-12 text-4xl font-bold">Contact</h1>
+        <h1 className="mb-12 text-4xl font-bold">Contact Us</h1>
+        <p className="mb-6">
+          <b>Email us:</b>
+          <a href="mailto:concierge@kellygreendesigns.com" className="block">
+            concierge@kellygreendesigns.com
+          </a>
+        </p>
       </div>
       {/* TODO: handle submit */}
       <form className="mx-20 my-9">

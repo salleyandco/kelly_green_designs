@@ -29,6 +29,41 @@
   margin-top: calc(var(--spacing) * 53);
 }
 
+@keyframes menu-slide-in {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes menu-slide-out {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@utility animate-menu-slide-in {
+  animation: menu-slide-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@utility animate-menu-slide-out {
+  animation: menu-slide-out 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-menu-slide-in {
+    animation: none;
+  }
+  .animate-menu-slide-out {
+    animation: none;
+  }
+}
+
 body {
   position: relative;
   background: var(--background);

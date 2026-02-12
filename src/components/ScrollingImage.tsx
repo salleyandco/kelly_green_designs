@@ -25,7 +25,7 @@ export default function ScrollingImage() {
         fill
         className="object-cover"
       />
-      <p className="sticky top-0 p-8 text-2xl uppercase">Caption</p>
+      <p className="sticky top-0 p-8 text-2xl uppercase"></p>
       <p
         className={`sticky text-center font-display text-[9vi] uppercase`}
         style={{ top: `${offsetTop}px` }}
