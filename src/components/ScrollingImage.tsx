@@ -24,6 +24,7 @@ export default function ScrollingImage() {
         alt="Scrolling image"
         fill
         className="object-cover"
+        quality={100}
       />
       <p className="sticky top-0 p-8 text-2xl uppercase"></p>
       <p
