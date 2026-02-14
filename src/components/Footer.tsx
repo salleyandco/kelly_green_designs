@@ -179,7 +179,7 @@ export default async function Footer() {
     <footer className="mx-8 my-12 flex flex-col justify-between md:mt-30 md:flex-row md:items-end">
       <div className="flex flex-col gap-4 md:flex-row">
         <Brand />
-        <PageLinks />
+        <PageLinks classNames={{ item: 'text-sm' }} />
       </div>
       <div className="md:mx-8">
         {renderSocialLinks()}
