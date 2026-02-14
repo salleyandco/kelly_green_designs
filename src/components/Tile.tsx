@@ -18,8 +18,8 @@ export default function Tile({
           <Image
             src={metadata.featured_image as string}
             alt={`Image representing ${metadata.title}`}
-            width={100}
-            height={100}
+            width={400}
+            height={400}
             className={`aspect-3/4 w-full object-cover`}
           />
         ) : (
