@@ -2,13 +2,14 @@ import Image from 'next/image';
 
 // TODO: Update with real images
 const Images = [
-  { src: '', alt: '' },
-  { src: '', alt: '' },
-  { src: '', alt: '' },
-  { src: '', alt: '' },
-  { src: '', alt: '' },
-  { src: '', alt: '' },
-  { src: '', alt: '' },
+  { src: '/0282D00A-C389-4E56-B838-6EBA05CE7E36.JPG', alt: '' },
+  { src: '/CA01FFF0-97B6-42C2-9025-A74FF65F47D3.JPG', alt: '' },
+  { src: '/File_001.jpeg', alt: '' },
+  { src: '/IMG_1568.JPEG', alt: '' },
+  { src: '/IMG_2887.JPG', alt: '' },
+  { src: '/IMG_3223.JPEG', alt: '' },
+  { src: '/IMG_3428.JPEG', alt: '' },
+  { src: '/IMG_4014.JPEG', alt: '' },
 ];
 
 export default function AboutPage() {
@@ -76,7 +77,9 @@ export default function AboutPage() {
               key={index}
               src={image.src}
               alt={image.alt}
-              className="aspect-square h-60"
+              width={240}
+              height={240}
+              className="aspect-square h-60 object-cover"
             />
           ))}
         </div>

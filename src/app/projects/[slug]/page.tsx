@@ -52,35 +52,39 @@ export default async function Single({
         alt={`Image ${index + 1}`}
         height={2000}
         width={3000}
-        className="order-last mx-8 w-1/3"
+        className="order-last md:mx-8 md:w-1/3"
       />
     ));
   };
 
   const classNames = [
     '[&>img]:first-of-type:relative [&>img]:first-of-type:order-1 [&>img]:first-of-type:m-0 [&>img]:first-of-type:h-screen [&>img]:first-of-type:w-screen [&>img]:first-of-type:object-cover',
-    '[&>img]:nth-of-type-[2]:order-3 [&>img]:nth-of-type-[2]:w-1/2 [&>img]:nth-of-type-[2]:ml-0',
+    '[&>img]:nth-of-type-[2]:order-3 md:[&>img]:nth-of-type-[2]:w-1/2 [&>img]:nth-of-type-[2]:ml-0',
     '[&>img]:nth-of-type-[3n+3]:w-full [&>img]:nth-of-type-[3n+3]:m-0',
-    '[&>img]:nth-of-type-[4n+4]:w-1/2',
+    'md:[&>img]:nth-of-type-[4n+4]:w-1/2',
   ];
 
   return (
     <article
       className={`flex flex-wrap items-center justify-evenly gap-8 ${classNames.join(' ')}`}
     >
-      <header className="order-2 my-8 ml-8 flex shrink grow-0 basis-[calc(50%-8rem)] flex-col justify-between self-stretch text-xs">
-        <div>
+      <header className="order-2 mx-8 my-8 flex shrink grow-0 flex-col justify-between self-stretch text-xs md:mr-0 md:basis-[calc(50%-8rem)]">
+        <div className="mb-10">
           <div className="flex border-b border-graphite">
-            <p>Project</p>
+            <p className="mr-8">Project</p>
             <h1>{project.title}</h1>
           </div>
           <div className="flex border-b border-graphite">
-            <p>Type</p>
+            <p className="mr-8">Type</p>
             <p>{project.categories[1]}</p>
           </div>
           <div className="flex border-b border-graphite">
-            <p>Location</p>
+            <p className="mr-8">Location</p>
             <p>{project.location}</p>
+          </div>
+          <div className="flex border-b border-graphite">
+            <p className="mr-8">Photographer</p>
+            <p>{project.photo_credit}</p>
           </div>
         </div>
         <section>

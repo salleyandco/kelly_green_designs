@@ -15,6 +15,7 @@ export type Project = {
   content: string;
   images: Url[] | string[];
   slug?: string;
+  photo_credit?: string;
 };
 
 export function getProjects(): Project[] {
