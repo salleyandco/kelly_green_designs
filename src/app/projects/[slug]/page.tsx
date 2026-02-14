@@ -52,7 +52,7 @@ export default async function Single({
         alt={`Image ${index + 1}`}
         height={2000}
         width={3000}
-        className="order-last mx-8 w-40"
+        className="order-last mx-8 w-1/3"
       />
     ));
   };
