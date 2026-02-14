@@ -27,30 +27,57 @@ function parseFrontmatter(fileContent: string) {
   const frontMatterLines = frontMatterBlock.trim().split('\n');
   const metadata: Metadata = {} as Metadata;
 
-  frontMatterLines.forEach((line) => {
-    const [key, ...valueArr] = line.split(': ');
-    let value = valueArr.join(': ').trim();
-    value = value.replace(/^['"](.*)['"]$/, '$1'); // Remove quotes
-    let parsedValue: string | string[] = value;
-    if (value.startsWith('[') && value.endsWith(']')) {
-      parsedValue = value
-        .slice(1, -1)
-        .split(',')
-        .map((item) => item.trim())
-        .filter(Boolean)
-        .map((item) => item.replace(/^['"](.*)['"]$/, '$1'));
+  for (let i = 0; i < frontMatterLines.length; i += 1) {
+    const line = frontMatterLines[i];
+    const splitIndex = line.indexOf(':');
+    if (splitIndex === -1) continue;
+
+    const key = line.slice(0, splitIndex).trim() as keyof Metadata;
+    let rawValue = line.slice(splitIndex + 1).trim();
+    let parsedValue: string | string[] = rawValue;
+
+    if (!rawValue) {
+      const items: string[] = [];
+      let j = i + 1;
+      while (j < frontMatterLines.length) {
+        const nextLine = frontMatterLines[j];
+        if (!/^\s*-\s+/.test(nextLine)) break;
+        const item = nextLine.replace(/^\s*-\s+/, '').trim();
+        if (item) {
+          items.push(item.replace(/^['"](.*)['"]$/, '$1'));
+        }
+        j += 1;
+      }
+
+      if (items.length > 0) {
+        parsedValue = items;
+        i = j - 1;
+      } else {
+        parsedValue = '';
+      }
+    } else {
+      rawValue = rawValue.replace(/^['"](.*)['"]$/, '$1'); // Remove quotes
+      parsedValue = rawValue;
+      if (rawValue.startsWith('[') && rawValue.endsWith(']')) {
+        parsedValue = rawValue
+          .slice(1, -1)
+          .split(',')
+          .map((item) => item.trim())
+          .filter(Boolean)
+          .map((item) => item.replace(/^['"](.*)['"]$/, '$1'));
+      }
     }
-    const trimmedKey = key.trim() as keyof Metadata;
-    if (trimmedKey === 'categories' || trimmedKey === 'tags') {
-      metadata[trimmedKey] = Array.isArray(parsedValue)
+
+    if (key === 'categories' || key === 'tags') {
+      metadata[key] = Array.isArray(parsedValue)
         ? parsedValue
         : typeof parsedValue === 'string' && parsedValue.length > 0
           ? [parsedValue]
           : [];
     } else {
-      metadata[trimmedKey] = parsedValue as never;
+      metadata[key] = parsedValue as never;
     }
-  });
+  }
 
   return { metadata: metadata, content };
 }

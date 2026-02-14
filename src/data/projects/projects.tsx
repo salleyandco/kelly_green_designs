@@ -13,7 +13,7 @@ export type Project = {
   published_at: Timestamp;
   location: string;
   content: string;
-  images: Url[];
+  images: Url[] | string[];
   slug?: string;
 };
 

@@ -39,7 +39,7 @@ export default function PageLinks({
         return <button onClick={() => setIsOpen(true)}>{page.name}</button>;
 
       return (
-        <Link href={page.href} onClick={() => setIsOpen(false)} scroll={false}>
+        <Link href={page.href} onClick={() => setIsOpen(false)}>
           {page.name}
         </Link>
       );

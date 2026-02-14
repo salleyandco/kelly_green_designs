@@ -47,7 +47,7 @@ export default async function Single({
   return (
     <article className="flex flex-wrap">
       <Image
-        src={'/#'}
+        src={project.images[0] as string}
         alt="Hero image"
         fill
         className="relative! h-screen! object-cover"
@@ -66,35 +66,53 @@ export default async function Single({
           <p>{project.location}</p>
         </div>
       </header>
-      <Image src={'/#'} alt="image" height={200} width={300} className="m-8" />
+      <Image
+        src={project.images[0] as string}
+        alt="image"
+        height={200}
+        width={300}
+        className="m-8"
+      />
       <section>
         <CustomMDX source={project.content} components={overrideComponents} />
       </section>
       <Image
-        src={'/#'}
+        src={project.images[0] as string}
         alt="image"
         height={200}
         width={300}
         className="w-full"
       />
       <Image
-        src={'/#'}
+        src={project.images[0] as string}
         alt="image"
         height={200}
         width={300}
         className="w-1/2"
       />
-      <Image src={'/#'} alt="image" height={200} width={300} className="" />
       <Image
-        src={'/#'}
+        src={project.images[0] as string}
+        alt="image"
+        height={200}
+        width={300}
+        className=""
+      />
+      <Image
+        src={project.images[0] as string}
         alt="image"
         height={200}
         width={300}
         className="w-full"
       />
-      <Image src={'/#'} alt="image" height={200} width={300} className="" />
       <Image
-        src={'/#'}
+        src={project.images[0] as string}
+        alt="image"
+        height={200}
+        width={300}
+        className=""
+      />
+      <Image
+        src={project.images[0] as string}
         alt="image"
         height={200}
         width={300}
