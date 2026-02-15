@@ -1,4 +1,6 @@
 @import 'tailwindcss';
+@import 'PPEditorialNew.css';
+@import 'HaasGrotTextTrial.css';
 
 :root {
   --background: #f7f5f0;
