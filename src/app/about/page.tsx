@@ -1,6 +1,5 @@
 import Image from 'next/image';
 
-// TODO: Update with real images
 const Images = [
   { src: '/0282D00A-C389-4E56-B838-6EBA05CE7E36.JPG', alt: '' },
   { src: '/CA01FFF0-97B6-42C2-9025-A74FF65F47D3.JPG', alt: '' },

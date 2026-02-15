@@ -1,13 +1,15 @@
 'use client';
 
-import { useState } from 'react';
-import Button from './Button';
+import { useEffect, useRef, useState } from 'react';
 import Brand from './Brand';
 import { Menu } from './Menu';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isMenuMounted, setIsMenuMounted] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+  const lastScrollY = useRef(0);
+  const ticking = useRef(false);
 
   const handleMenuState = (nextState: boolean) => {
     if (nextState) {
@@ -19,18 +21,42 @@ export default function Header() {
     setIsOpen(false);
   };
 
+  useEffect(() => {
+    lastScrollY.current = window.scrollY;
+
+    const onScroll = () => {
+      if (ticking.current) return;
+      ticking.current = true;
+
+      window.requestAnimationFrame(() => {
+        const currentY = window.scrollY;
+        const delta = currentY - lastScrollY.current;
+
+        if (Math.abs(delta) > 4) {
+          if (currentY <= 0) {
+            setIsHidden(false);
+          } else {
+            setIsHidden(delta > 0 && !isOpen);
+          }
+          lastScrollY.current = currentY;
+        }
+
+        ticking.current = false;
+      });
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [isOpen]);
+
   return (
     <header
-      className={'fixed top-0 z-50 flex w-full items-center justify-between'}
+      className={`fixed top-0 z-50 flex w-full items-center justify-between transition-transform duration-500 ${
+        isHidden ? '-translate-y-full' : 'translate-y-0'
+      }`}
     >
       <span className="w-14 md:hidden" />
-      <Brand className="my-6 md:mx-9" />
-      {/* <span className="hidden grow md:block" />
-      <div className="mr-9 flex items-center self-start">
-        <Button href="/contact" className="hidden md:block">
-          Concierge
-        </Button>
-      </div> */}
+      <Brand className="z-50 my-6 md:z-0 md:mx-9" />
       <button
         onClick={() => handleMenuState(!isOpen)}
         className={

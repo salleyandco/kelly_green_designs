@@ -3,7 +3,6 @@ import Brand from './Brand';
 import Image from 'next/image';
 import PageLinks from './PageLinks';
 
-// TODO: relayout and restyle for mobile
 export function Menu({
   isOpen,
   setIsOpen,
@@ -15,20 +14,20 @@ export function Menu({
 }) {
   return (
     <div
-      className={`fixed top-0 grid h-screen w-full grid-cols-2 bg-bone-white ${
+      className={`fixed top-0 grid h-screen w-full bg-bone-white md:grid-cols-2 ${
         isOpen ? 'animate-menu-slide-in' : 'animate-menu-slide-out'
       }`}
       onAnimationEnd={onAnimationEnd}
     >
       <div className="flex flex-col justify-between p-9">
+        <Brand className="hidden md:order-2 md:block" />
         <PageLinks
           setIsOpen={setIsOpen}
           classNames={{
-            list: 'mt-4 hidden md:block',
-            item: 'text-sm/[1.8rem]',
+            list: 'mt-30 md:mt-4 md:block md:order-1',
+            item: 'text-lg/[2em] text-center md:text-sm/[1.8rem] md:text-left',
           }}
         />
-        <Brand />
       </div>
       {/* TODO: replace image */}
       <Image
