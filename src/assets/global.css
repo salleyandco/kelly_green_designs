@@ -1,6 +1,6 @@
 @import 'tailwindcss';
-@import 'PPEditorialNew.css';
-@import 'HaasGrotTextTrial.css';
+@import './fonts/PPEditorialNew.css';
+@import './fonts/HaasGrotText.css';
 
 :root {
   --background: #f7f5f0;
@@ -15,8 +15,8 @@
   --color-dusty-mauve: #cfaeb7;
   --color-soft-papaya: #f2b084;
 
-  --font-serif: 'PP Editorial New';
-  --font-sans: 'Haas Grot Text Trial';
+  --font-serif: 'PP Editorial';
+  --font-sans: 'Haas Grot Text';
   --font-display: 'Ibarra Real Nova';
 }
 

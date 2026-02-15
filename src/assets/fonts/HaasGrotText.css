@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Haas Grot Text 55 Roman';
+  font-family: 'Haas Grot Text';
   src:
     url('HaasGrotText-56Italic.woff2') format('woff2'),
     url('HaasGrotText-56Italic.woff') format('woff');
@@ -9,7 +9,7 @@
 }
 
 @font-face {
-  font-family: 'Haas Grot Text 65';
+  font-family: 'Haas Grot Text';
   src:
     url('HaasGrotText-65Medium.woff2') format('woff2'),
     url('HaasGrotText-65Medium.woff') format('woff');
@@ -19,7 +19,7 @@
 }
 
 @font-face {
-  font-family: 'Haas Grot Text 55 Roman';
+  font-family: 'Haas Grot Text';
   src:
     url('HaasGrotText-55Roman.woff2') format('woff2'),
     url('HaasGrotText-55Roman.woff') format('woff');
@@ -29,7 +29,7 @@
 }
 
 @font-face {
-  font-family: 'Haas Grot Text 65';
+  font-family: 'Haas Grot Text';
   src:
     url('HaasGrotText-66MediumItalic.woff2') format('woff2'),
     url('HaasGrotText-66MediumItalic.woff') format('woff');
@@ -39,7 +39,7 @@
 }
 
 @font-face {
-  font-family: 'Haas Grot Text 55 Roman';
+  font-family: 'Haas Grot Text';
   src:
     url('HaasGrotText-76BoldItalic.woff2') format('woff2'),
     url('HaasGrotText-76BoldItalic.woff') format('woff');
@@ -49,7 +49,7 @@
 }
 
 @font-face {
-  font-family: 'Haas Grot Text 55 Roman';
+  font-family: 'Haas Grot Text';
   src:
     url('HaasGrotText-75Bold.woff2') format('woff2'),
     url('HaasGrotText-75Bold.woff') format('woff');
