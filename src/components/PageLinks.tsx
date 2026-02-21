@@ -7,8 +7,8 @@ const pages = [
     href: '/about',
   },
   {
-    name: 'Projects',
-    href: '/projects',
+    name: 'Design Portfolio',
+    href: '/portfolio',
   },
   {
     name: 'Services',

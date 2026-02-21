@@ -23,13 +23,16 @@ export default function AboutPage() {
         </h1>
         <div>
           <p>
-            From the White House to your house, Kelly Green brings over a decade
-            of elite floral artistry to life’s most meaningful moments. A former
-            White House florist, she designed for state dinners, inaugurations,
-            and world leaders. Today, through Kelly Green Designs, she creates
-            bespoke, seasonal floral experiences—thoughtful, refined, and deeply
+            From the White House to your house, Kelly Green brings nearly three
+            decades of elite floral artistry to life’s most meaningful moments.
+            Hired by the Obama administration as the first Black florist to work
+            full-time in the White House flower shop, she served for 12 years
+            designing for state dinners, inaugurations, world leaders and
+            created floral experiences throughout the House and private
+            residence. Today, through Kelly Green Designs, she creates bespoke,
+            seasonal floral experiences—thoughtful, refined, and deeply
             personal—marked by quiet professionalism, discretion, and impeccable
-            detail.
+            detail. Let her bring your next celebration to life.
           </p>
         </div>
       </div>

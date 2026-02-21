@@ -3,7 +3,17 @@ export default function ServicesPage() {
   return (
     <main className="mt-page">
       <section className="mb-16">
-        <div className="px-16 py-20 odd:ml-auto odd:bg-[#AA9361]/15 even:mr-auto md:w-1/2">
+        <div className="px-16 py-20 pl-8 odd:mr-auto even:ml-auto even:bg-[#AA9361]/15 md:w-1/2">
+          <h2 className="pb-2 font-sans text-4xl font-medium"></h2>
+          <p>
+            If you’re looking for luxury designs…all you have to do is say yes
+            to the journey and enjoy the moments as they unfold. Kelly Green
+            Designs brings clarity and calm to your event. From the conceptual
+            design to the final stem placed, let us execute your visions so it
+            feels cohesive, polished, and deeply considered.
+          </p>
+        </div>
+        <div className="px-16 py-20 odd:mr-auto even:ml-auto even:bg-[#AA9361]/15 md:w-1/2">
           <h2 className="pb-2 font-sans text-4xl font-medium">Floral Design</h2>
           <p>
             Flowers are our foundation, and Kelly Green Designs thoughtfully
@@ -22,7 +32,7 @@ export default function ServicesPage() {
             bag opened.
           </p>
         </div>
-        <div className="px-16 py-20 odd:ml-auto odd:bg-[#AA9361]/15 even:mr-auto md:w-1/2">
+        <div className="px-16 py-20 odd:mr-auto even:ml-auto even:bg-[#AA9361]/15 md:w-1/2">
           <h2 className="pb-2 font-sans text-4xl font-medium">
             Corporate Events and Meetings
           </h2>
@@ -34,7 +44,7 @@ export default function ServicesPage() {
             support your agenda and brand.
           </p>
         </div>
-        <div className="px-16 py-20 odd:ml-auto odd:bg-[#AA9361]/15 even:mr-auto md:w-1/2">
+        <div className="px-16 py-20 odd:mr-auto even:ml-auto even:bg-[#AA9361]/15 md:w-1/2">
           <h2 className="pb-2 font-sans text-4xl font-medium">Weddings</h2>
           <p>
             Your wedding should feel like a true reflection of your story and
@@ -44,7 +54,7 @@ export default function ServicesPage() {
             of your life.
           </p>
         </div>
-        <div className="px-16 py-20 odd:ml-auto odd:bg-[#AA9361]/15 even:mr-auto md:w-1/2">
+        <div className="px-16 py-20 odd:mr-auto even:ml-auto even:bg-[#AA9361]/15 md:w-1/2">
           <h2 className="pb-2 font-sans text-4xl font-medium">Set Design</h2>
           <p>
             Flowers can do more than set a mood. They can shape a viewer’s
@@ -53,7 +63,7 @@ export default function ServicesPage() {
             and elevate each scene with intentional, camera-ready detail.
           </p>
         </div>
-        <div className="px-16 py-20 odd:ml-auto odd:bg-[#AA9361]/15 even:mr-auto md:w-1/2">
+        <div className="px-16 py-20 odd:mr-auto even:ml-auto even:bg-[#AA9361]/15 md:w-1/2">
           <h2 className="pb-2 font-sans text-4xl font-medium">
             Permanent or Seasonal Installations
           </h2>

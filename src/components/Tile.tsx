@@ -9,7 +9,7 @@ export default function Tile({
   metadata: Project;
   className?: string;
 }) {
-  const slug = '/projects/' + metadata.slug;
+  const slug = '/portfolio/' + metadata.slug;
 
   return (
     <Link href={slug ?? '#'} className={className}>
