@@ -93,7 +93,7 @@ export default async function Single({
     <article
       className={`flex flex-wrap items-center justify-evenly gap-8 ${classNames.join(' ')}`}
     >
-      <header className="order-2 mx-8 my-8 flex shrink grow-0 flex-col self-stretch text-xs md:mr-0 md:basis-[calc(50%-8rem)] md:text-sm">
+      <header className="order-2 mx-8 my-8 flex shrink grow-0 flex-col self-stretch md:mr-0 md:basis-[calc(50%-8rem)] md:text-sm">
         <div className="mb-10 grid grid-cols-[max-content_auto] gap-2">
           {project.title && (
             <>

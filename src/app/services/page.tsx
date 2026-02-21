@@ -3,7 +3,7 @@ export default function ServicesPage() {
   return (
     <main className="mt-page">
       <section className="mb-16">
-        <div className="px-16 py-20 pl-8 odd:mr-auto even:ml-auto even:bg-[#AA9361]/15 md:w-1/2">
+        <div className="px-16 py-20 odd:mr-auto even:ml-auto even:bg-[#AA9361]/15 md:w-1/2 md:pl-8">
           <h2 className="pb-2 font-sans text-4xl font-medium"></h2>
           <p>
             If you’re looking for luxury designs…all you have to do is say yes
