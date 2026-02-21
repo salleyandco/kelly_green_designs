@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { getProjects, Project } from '@/data/projects/projects';
 import { CustomMDX } from '@/helpers/mdx';
+import ButtonComponent from '@/components/Button';
 
 export default async function Single({
   params,
@@ -57,6 +58,30 @@ export default async function Single({
     ));
   };
 
+  const renderNavButtons = () => {
+    const nextSlug = parseInt(slug) + 1;
+    const prevSlug = parseInt(slug) - 1;
+
+    return (
+      <div className="order-last flex w-full justify-between px-8">
+        {!isNaN(prevSlug) && prevSlug > 0 ? (
+          <ButtonComponent variant="hollow" href={`/portfolio/${prevSlug}`}>
+            View Previous
+          </ButtonComponent>
+        ) : (
+          <span />
+        )}
+        {!isNaN(nextSlug) && nextSlug <= data.length ? (
+          <ButtonComponent variant="hollow" href={`/portfolio/${nextSlug}`}>
+            View Next
+          </ButtonComponent>
+        ) : (
+          <span />
+        )}
+      </div>
+    );
+  };
+
   const classNames = [
     '[&>img]:first-of-type:relative [&>img]:first-of-type:order-1 [&>img]:first-of-type:m-0 [&>img]:first-of-type:h-screen [&>img]:first-of-type:w-screen [&>img]:first-of-type:object-cover',
     '[&>img]:nth-of-type-[2]:order-3 md:[&>img]:nth-of-type-[2]:w-1/2 [&>img]:nth-of-type-[2]:ml-0',
@@ -100,6 +125,7 @@ export default async function Single({
         </section>
       </header>
       {renderImages()}
+      {renderNavButtons()}
     </article>
   );
 }
