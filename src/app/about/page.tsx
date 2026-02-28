@@ -14,7 +14,7 @@ const Images = [
 export default function AboutPage() {
   return (
     <main className="mx-9 mt-page items-start gap-18 lg:flex">
-      <div className="mb-20 max-w-[430px]">
+      <div className="mb-20 max-w-107.5">
         <h1 className="mt-20 mb-12 font-serif text-6xl">
           <small className="block font-sans text-base font-bold">
             What I&apos;m all
