@@ -12,7 +12,7 @@ export default async function CategoryPage() {
             <Tile key={i} metadata={{ ...project }}></Tile>
           ))
         ) : (
-          <p>No projects available.</p>
+          <p>No portfolio items available.</p>
         )}
       </div>
     </main>

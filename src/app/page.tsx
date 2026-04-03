@@ -26,8 +26,8 @@ export default function Home() {
   const renderFeaturedWork = () => (
     <section className="mx-16 my-44">
       <div className="mb-16 flex items-center justify-between border-b pb-2">
-        <h3 className="font-display text-3xl">Engagements</h3>
-        <Link href="/projects">View All</Link>
+        <h3 className="font-display text-3xl">Design Portfolio</h3>
+        <Link href="/portfolio">View All</Link>
       </div>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
         {

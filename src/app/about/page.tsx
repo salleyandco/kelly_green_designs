@@ -14,7 +14,7 @@ const Images = [
 export default function AboutPage() {
   return (
     <main className="mx-9 mt-page items-start gap-18 lg:flex">
-      <div className="mb-20 max-w-[430px]">
+      <div className="mb-20 max-w-107.5">
         <h1 className="mt-20 mb-12 font-serif text-6xl">
           <small className="block font-sans text-base font-bold">
             What I&apos;m all
@@ -23,13 +23,16 @@ export default function AboutPage() {
         </h1>
         <div>
           <p>
-            From the White House to your house, Kelly Green brings over a decade
-            of elite floral artistry to life’s most meaningful moments. A former
-            White House florist, she designed for state dinners, inaugurations,
-            and world leaders. Today, through Kelly Green Designs, she creates
-            bespoke, seasonal floral experiences—thoughtful, refined, and deeply
+            From the White House to your house, Kelly Green brings nearly three
+            decades of elite floral artistry to life’s most meaningful moments.
+            Hired by the Obama administration as the first Black florist to work
+            full-time in the White House flower shop, she served for 12 years
+            designing for state dinners, inaugurations, world leaders and
+            created floral experiences throughout the House and private
+            residence. Today, through Kelly Green Designs, she creates bespoke,
+            seasonal floral experiences—thoughtful, refined, and deeply
             personal—marked by quiet professionalism, discretion, and impeccable
-            detail.
+            detail. Let her bring your next celebration to life.
           </p>
         </div>
       </div>
@@ -64,9 +67,10 @@ export default function AboutPage() {
           <li className="px-16 py-20 xl:bg-[#AA9361]/15">
             <h2 className="pb-2 font-sans text-4xl font-medium">Curated</h2>
             <p className="font-sans">
-              Guided by each client&apos;s taste and setting, Kelly listens and
-              then curates flowers, textures, and details that come together in
-              a floral experience that feels beautifully, unmistakably theirs.
+              Guided by each client&apos;s personal style and vision, Kelly
+              listens and then curates flowers, textures, and details that come
+              together in a floral experience that feels beautifully,
+              unmistakably theirs.
             </p>
           </li>
         </ul>

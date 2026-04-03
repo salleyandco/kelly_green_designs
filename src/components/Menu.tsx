@@ -31,7 +31,7 @@ export function Menu({
       </div>
       {/* TODO: replace image */}
       <Image
-        src="/Firefly_Imagen_Full-bleed editorial photograph (sculptural floral composition) on a Matte stone (tra 658735 1.jpg"
+        src="/image.png"
         alt="Floral arrangement by Kelly Green Designs"
         className="h-full w-full bg-gray-200 object-cover"
         width={3000}

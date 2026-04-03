@@ -47,7 +47,7 @@ export default function ContactPage() {
           />
         </div>
         <div className={classNames[0]}>
-          <label htmlFor="inquiry">Inquiry*</label>
+          <label htmlFor="inquiry">Event Type*</label>
           <input
             id="inquiry"
             name="inquiry"
@@ -68,12 +68,16 @@ export default function ContactPage() {
             className={classNames[1]}
           />
         </div>
-        <div className={`${classNames[0]} flex-row`}>
+        <div className={`${classNames[0]} flex-col flex-wrap`}>
           <label>I am a</label>
-          <input type="radio" id="customer" name="customer" value="d2c" />
-          <label htmlFor="customer">Individual</label>
-          <input type="radio" id="customer" name="customer" value="b2c" />
-          <label htmlFor="customer">Planner/Staff</label>
+          <div className="flex gap-1">
+            <input type="radio" id="customer" name="customer" value="d2c" />
+            <label htmlFor="customer">Client</label>
+          </div>
+          <div className="flex gap-1">
+            <input type="radio" id="customer" name="customer" value="b2c" />
+            <label htmlFor="customer">Event Producer/Designer</label>
+          </div>
         </div>
         <ButtonComponent type="submit" className="w-full">
           Submit

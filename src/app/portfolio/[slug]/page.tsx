@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { getProjects, Project } from '@/data/projects/projects';
 import { CustomMDX } from '@/helpers/mdx';
+import ButtonComponent from '@/components/Button';
 
 export default async function Single({
   params,
@@ -20,7 +21,7 @@ export default async function Single({
     <h1 className="my-[1em] text-2xl">{children}</h1>
   );
   const Body = ({ children }: { children: React.ReactNode }) => (
-    <p className={``}>{children}</p>
+    <p className={'mb-4'}>{children}</p>
   );
   const Heading = ({ children }: { children: React.ReactNode }) => (
     <h2 className="my-[1em] mt-10 mb-4 text-xl">{children}</h2>
@@ -57,6 +58,30 @@ export default async function Single({
     ));
   };
 
+  const renderNavButtons = () => {
+    const nextSlug = parseInt(slug) + 1;
+    const prevSlug = parseInt(slug) - 1;
+
+    return (
+      <div className="order-last flex w-full justify-between px-8">
+        {!isNaN(prevSlug) && prevSlug > 0 ? (
+          <ButtonComponent variant="hollow" href={`/portfolio/${prevSlug}`}>
+            View Previous
+          </ButtonComponent>
+        ) : (
+          <span />
+        )}
+        {!isNaN(nextSlug) && nextSlug <= data.length ? (
+          <ButtonComponent variant="hollow" href={`/portfolio/${nextSlug}`}>
+            View Next
+          </ButtonComponent>
+        ) : (
+          <span />
+        )}
+      </div>
+    );
+  };
+
   const classNames = [
     '[&>img]:first-of-type:relative [&>img]:first-of-type:order-1 [&>img]:first-of-type:m-0 [&>img]:first-of-type:h-screen [&>img]:first-of-type:w-screen [&>img]:first-of-type:object-cover',
     '[&>img]:nth-of-type-[2]:order-3 md:[&>img]:nth-of-type-[2]:w-1/2 [&>img]:nth-of-type-[2]:ml-0',
@@ -68,30 +93,39 @@ export default async function Single({
     <article
       className={`flex flex-wrap items-center justify-evenly gap-8 ${classNames.join(' ')}`}
     >
-      <header className="order-2 mx-8 my-8 flex shrink grow-0 flex-col justify-between self-stretch text-xs md:mr-0 md:basis-[calc(50%-8rem)]">
-        <div className="mb-10">
-          <div className="flex border-b border-graphite">
-            <p className="mr-8">Project</p>
-            <h1>{project.title}</h1>
-          </div>
-          <div className="flex border-b border-graphite">
-            <p className="mr-8">Type</p>
-            <p>{project.categories[1]}</p>
-          </div>
-          <div className="flex border-b border-graphite">
-            <p className="mr-8">Location</p>
-            <p>{project.location}</p>
-          </div>
-          <div className="flex border-b border-graphite">
-            <p className="mr-8">Photographer</p>
-            <p>{project.photo_credit}</p>
-          </div>
+      <header className="order-2 mx-8 my-8 flex shrink grow-0 flex-col self-stretch md:mr-0 md:basis-[calc(50%-8rem)] md:text-sm">
+        <div className="mb-10 grid grid-cols-[max-content_auto] gap-2">
+          {project.title && (
+            <>
+              <p className="mr-8">Event</p>
+              <h1>{project.title}</h1>
+            </>
+          )}
+          {project.categories.length > 0 && (
+            <>
+              <p className="mr-8">Event Type</p>
+              <p>{project.categories[0]}</p>
+            </>
+          )}
+          {project.location && (
+            <>
+              <p className="mr-8">Location</p>
+              <p>{project.location}</p>
+            </>
+          )}
+          {project.photo_credit && (
+            <>
+              <p className="mr-8">Photographer</p>
+              <p>{project.photo_credit}</p>
+            </>
+          )}
         </div>
         <section>
           <CustomMDX source={project.content} components={overrideComponents} />
         </section>
       </header>
       {renderImages()}
+      {renderNavButtons()}
     </article>
   );
 }
