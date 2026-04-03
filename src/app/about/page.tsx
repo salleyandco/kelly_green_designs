@@ -67,9 +67,10 @@ export default function AboutPage() {
           <li className="px-16 py-20 xl:bg-[#AA9361]/15">
             <h2 className="pb-2 font-sans text-4xl font-medium">Curated</h2>
             <p className="font-sans">
-              Guided by each client&apos;s taste and setting, Kelly listens and
-              then curates flowers, textures, and details that come together in
-              a floral experience that feels beautifully, unmistakably theirs.
+              Guided by each client&apos;s personal style and vision, Kelly
+              listens and then curates flowers, textures, and details that come
+              together in a floral experience that feels beautifully,
+              unmistakably theirs.
             </p>
           </li>
         </ul>
