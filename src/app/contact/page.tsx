@@ -13,9 +13,28 @@ export default function ContactPage() {
             concierge@kellygreendesigns.com
           </a>
         </p>
+        <p className="text-sm">
+          This form submits through a browser-compatible form endpoint so it can
+          work on a static export.
+        </p>
       </div>
-      {/* TODO: handle submit */}
-      <form className="mx-20 my-9">
+      <form
+        className="mx-20 my-9"
+        action="https://formsubmit.co/concierge@kellygreendesigns.com"
+        method="POST"
+      >
+        <input
+          type="hidden"
+          name="_subject"
+          value="New inquiry from kellygreendesigns.com"
+        />
+        <input type="hidden" name="_template" value="table" />
+        <input
+          type="hidden"
+          name="_next"
+          value="https://kellygreendesigns.com/contact"
+        />
+
         <div className={classNames[0]}>
           <label htmlFor="name">First & Last Name*</label>
           <input
@@ -31,6 +50,7 @@ export default function ContactPage() {
           <input
             id="email"
             name="email"
+            type="email"
             autoComplete="email"
             required
             className={classNames[1]}
@@ -41,23 +61,24 @@ export default function ContactPage() {
           <input
             id="phone"
             name="phone"
+            type="tel"
             autoComplete="tel"
             required
             className={classNames[1]}
           />
         </div>
         <div className={classNames[0]}>
-          <label htmlFor="inquiry">Event Type*</label>
+          <label htmlFor="eventType">Event Type*</label>
           <input
-            id="inquiry"
-            name="inquiry"
+            id="eventType"
+            name="eventType"
             required
             className={classNames[1]}
           />
         </div>
         <div className={classNames[0]}>
           <label htmlFor="date">Event Date</label>
-          <input id="date" name="date" className={classNames[1]} />
+          <input id="date" name="date" type="date" className={classNames[1]} />
         </div>
         <div className={classNames[0]}>
           <label htmlFor="message">Message*</label>
@@ -69,14 +90,19 @@ export default function ContactPage() {
           />
         </div>
         <div className={`${classNames[0]} flex-col flex-wrap`}>
-          <label>I am a</label>
+          <span>I am a</span>
           <div className="flex gap-1">
-            <input type="radio" id="customer" name="customer" value="d2c" />
-            <label htmlFor="customer">Client</label>
+            <input type="radio" id="role-client" name="role" value="Client" />
+            <label htmlFor="role-client">Client</label>
           </div>
           <div className="flex gap-1">
-            <input type="radio" id="customer" name="customer" value="b2c" />
-            <label htmlFor="customer">Event Producer/Designer</label>
+            <input
+              type="radio"
+              id="role-producer"
+              name="role"
+              value="Event Producer/Designer"
+            />
+            <label htmlFor="role-producer">Event Producer/Designer</label>
           </div>
         </div>
         <ButtonComponent type="submit" className="w-full">
