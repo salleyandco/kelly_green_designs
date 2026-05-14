@@ -2,6 +2,27 @@ import Image from 'next/image';
 import { getProjects, Project } from '@/data/projects/projects';
 import { CustomMDX } from '@/helpers/mdx';
 import ButtonComponent from '@/components/Button';
+import { Metadata } from 'next';
+
+type Props = {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+const data = getProjects();
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const slug = (await params).slug;
+
+  // fetch post information
+  const project: Project | undefined = data.find(
+    (project) => project.slug === slug
+  );
+
+  return {
+    title: project?.title,
+  };
+}
 
 export default async function Single({
   params,
@@ -9,7 +30,6 @@ export default async function Single({
   params: Promise<{ slug: string }>;
 }>) {
   const { slug } = await params;
-  const data = getProjects();
 
   const project: Project | undefined = data.find(
     (project) => project.slug === slug

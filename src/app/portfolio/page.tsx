@@ -1,5 +1,10 @@
 import Tile from '@/components/Tile';
 import { getProjects } from '@/data/projects/projects';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Portfolio',
+};
 
 export default async function CategoryPage() {
   const projects = await getProjects();
