@@ -15,8 +15,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Kelly Green Designs',
-  description: '',
+  title: {
+    template: 'Kelly Green Designs | %s',
+    default: 'Kelly Green Designs',
+  },
+  description:
+    'Kelly Green Designs creates beautiful, custom floral designs for weddings, events, and everyday moments. Discover inspired arrangements crafted with creativity and care.',
 };
 
 export default function RootLayout({

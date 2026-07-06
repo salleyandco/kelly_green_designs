@@ -1,4 +1,9 @@
 import Image from 'next/image';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About',
+};
 
 const Images = [
   { src: '/0282D00A-C389-4E56-B838-6EBA05CE7E36.JPG', alt: '' },

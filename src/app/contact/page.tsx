@@ -1,4 +1,9 @@
 import ButtonComponent from '@/components/Button';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contact Us',
+};
 
 export default function ContactPage() {
   const classNames = ['flex flex-col gap-1 mb-6', 'outline px-2 py-1'];
